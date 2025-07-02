@@ -1,4 +1,4 @@
-<footer class="bg-[#008369] py-5 text-white relative overflow-hidden">
+<footer class="bg-[#008369] py-5 text-white relative overflow-hidden shadow-md border-t border-gray-300">
     <img src="{{ asset('images/abstrak_ornament_white.png') }}" alt="ornamen" class="absolute bottom-0 left-0 h-50">
     <div class="container mx-auto px-6">
         <div class="flex items-center justify-between flex-col md:flex-row">
@@ -33,7 +33,7 @@
             </div>
         </div>
     </div>
-    <hr class="bg-white border-0 h-px my-5">
+    <hr class=" border-0 h-px my-5">
     
     <p class="mx-auto flex justify-center text-center">© 2025 CV. Surya Barokah Mandiri. All Right Reserved</p>
 </footer>

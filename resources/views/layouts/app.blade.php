@@ -9,11 +9,11 @@
     <title>Website SBM</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-100 flex flex-col min-h-screen font-sans">
+<body style="background-color: #ffffff" class="flex flex-col font-sans">
 
     @include('partials.navbar')
 
-    <main class="container mx-auto p-6 flex-grow">
+    <main class="">
         @yield('content')
     </main>
 
