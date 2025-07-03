@@ -14,7 +14,7 @@
 
     <div class="max-w-6xl mx-auto">
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 mb-16 justify-items-center">
-            @foreach (['icon1.png', 'icon2.png', 'icon3.png'] as $index => $icon)
+            @foreach (['digital-services.png', 'digital-services.png', 'digital-services.png'] as $index => $icon)
             <div class="bg-white rounded-lg shadow-md p-6 border border-gray-200 w-full max-w-[300px]"
                  data-aos="zoom-in-up" data-aos-delay="{{ $index * 150 }}">
                 <div class="flex justify-center mb-10">
@@ -29,22 +29,47 @@
         </div>
     </div>
 
-    <!-- Section: Produk Kami -->
-    <div class=" rounded-2xl p-6 sm:p-8 max-w-7xl mx-auto" data-aos="fade-up" style="background-color: #008369">
+            <!-- Section: Produk Kami -->
+       @php
+         $produk = [
+            [
+            'nama' => 'Hannan Tea',
+            'gambar' => 'hanan-tea.png',
+            'deskripsi' => 'Teh herbal alami yang menyehatkan tubuh dan pikiran.'
+            ],
+            [
+            'nama' => 'Hannan Tea',
+            'gambar' => 'hanan-tea.png',
+            'deskripsi' => 'Teh herbal alami yang menyehatkan tubuh dan pikiran.'
+            ],
+            [
+            'nama' => 'Hannan Tea',
+            'gambar' => 'hanan-tea.png',
+            'deskripsi' => 'Teh herbal alami yang menyehatkan tubuh dan pikiran.'
+            ],
+            [
+            'nama' => 'Hannan Tea',
+            'gambar' => 'hanan-tea.png',
+            'deskripsi' => 'Teh herbal alami yang menyehatkan tubuh dan pikiran.'
+            ],
+           
+        ];
+        @endphp
+        <div class="bg-[#008369] rounded-2xl p-6 sm:p-8 max-w-7xl mx-auto" data-aos="fade-up">
         <h2 class="text-3xl font-bold text-white text-center mb-8">Produk Kami</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
-            @for ($i = 0; $i < 4; $i++)
-            <div class="bg-white rounded-lg p-4 w-full max-w-[270px]"
-                 data-aos="flip-left" data-aos-delay="{{ $i * 150 }}">
-                <div class="bg-gray-100 rounded-lg mb-4 h-32 flex items-center justify-center">
-                    <img src="https://via.placeholder.com/120x80/4a5568/ffffff?text=Hannan+Tea" alt="Hannan Tea" class="rounded">
-                </div>
-                <h3 class="font-semibold text-gray-800 mb-1 text-center">Hannan Tea</h3>
-                <p class="text-xs text-gray-600 mb-2 text-center">Lorem ipsum dolor sit amet consectetur...</p>
-            </div>
-            @endfor
-        </div>
 
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 justify-items-center">
+            @foreach ($produk as $index => $item)
+            <div class="bg-white rounded-lg p-4 w-full max-w-[270px]"
+                data-aos="flip-left" data-aos-delay="{{ $index * 150 }}">
+                <div class="bg-gray-100 rounded-lg mb-4 h-32 flex items-center justify-center overflow-hidden">
+                <img src="{{ asset('images/' . $item['gambar']) }}" alt="{{ $item['nama'] }}" class="object-contain h-full">
+                </div>
+                <h3 class="font-semibold text-gray-800 mb-1 text-center">{{ $item['nama'] }}</h3>
+                <p class="text-xs text-gray-600 mb-2 text-center">{{ $item['deskripsi'] }}</p>
+            </div>
+            @endforeach
+        </div>
         <div class="text-center mt-10" data-aos="fade-up" data-aos-delay="100">
             <a href="#" class="bg-white text-teal-700 px-6 py-2 rounded-full font-semibold shadow-md hover:bg-gray-100 transition">
                 Selengkapnya →
@@ -57,7 +82,7 @@
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
-    once: true,
+    once: false,
     duration: 1000,
     offset: 100
   });
